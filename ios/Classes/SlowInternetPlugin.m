@@ -12,4 +12,15 @@
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   [SwiftSlowInternetPlugin registerWithRegistrar:registrar];
 }
+
+- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result{
+  if([@"isSlowInternet" isEqualToString:call.method]){
+    result(@"Method Call Present");
+  } else
+  if([@"getPlatformVersion" isEqualToString:call.method]){
+    result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
+  } else{
+    result(FlutterMethodNotImplemented);
+  }
+}
 @end
