@@ -9,6 +9,7 @@ public class SwiftSlowInternetPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    result("iOS " + UIDevice.current.systemVersion)
+    //result("iOS " + UIDevice.current.systemVersion)
+    result("iOS FlutterMethodCall from SwiftSlowInternetPlugin.swift")
   }
 }
